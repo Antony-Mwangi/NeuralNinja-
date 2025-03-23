@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about-me">
+      <div class="intro">
+        <h1>About Me</h1>
+        <p>Hi! I'm Antony Mwangi, I'm passionate in Data Analysis , Data science and Machine Learning  with experience in transforming complex data into actionable insights. I strive to make data-driven decisions through innovative analysis and machine learning models. I’m always learning new techniques to help organizations unlock the value of their data.</p>
+        <img src="c:\Users\ANTONY\Downloads\DataScience.png" alt="Data Science" class="about-image">
+      </div>
+
+      <div class="skills">
+        <h2>My Skills</h2>
+        <div class="skill-set">
+          <div class="skill">
+            <h3>Data Analysis</h3>
+            <p>Using Python libraries such as PANDAS, NUMPY, and MATPLOTLIB, I analyze, clean, and visualize data to help businesses make data-driven decisions.</p>
+          </div>
+          <div class="skill">
+            <h3 font="white">Machine Learning</h3>
+            <p font="white">I specialize in building and deploying machine learning models using scikit-learn to solve problems and predict outcomes from data.</p>
+          </div>
+          <div class="skill">
+            <h3 font="white">Data Visualization</h3>
+            <p font="white">I use tools like Matplotlib seaborn and plotly to create visually appealing and informative dashboards, charts, and reports that communicate insights clearly.</p>
+          </div>
+         
+        </div>
+      </div>
+
+     
+
+  
+
+      <div class="image-gallery">
+        <h2>Images & Infographics</h2>
+        <div class="gallery">
+          <img src="c:\Users\ANTONY\Pictures\ml.PNG" alt="Machine Learning" class="gallery-item">
+          <img src= "c:\Users\ANTONY\Pictures\knn.PNG" alt="Data Visualization" class="gallery-item">
+          <img src="c:\Users\ANTONY\Downloads\Random-data-plus-trend-r2.png" alt="Time Series Analysis" class="gallery-item">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name | All Rights Reserved</p>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    // Fetch and display the projects
+    fetch('/api/projects')
+        .then(response => response.json())
+        .then(projects => {
+            const projectList = document.getElementById('projectList');
+            projects.forEach(project => {
+                const projectItem = document.createElement('li');
+                projectItem.innerHTML = `<strong>${project.title}</strong><p>${project.description}</p><a href="${project.url}" target="_blank">View Project</a>`;
+                projectList.appendChild(projectItem);
+            });
+        });
+});
+</script>
