@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel List</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+        a { text-decoration: none; padding: 5px 10px; background: #4CAF50; color: white; border-radius: 4px; }
+        a.delete { background: #f44336; }
+    </style>
+</head>
+<body>
+    <h1>Hotel List</h1>
+    <a href="{% url 'hotel_create' %}">Add Hotel</a>
+    <table>
+        <tr>
+            <th>Name</th><th>Location</th><th>Rooms</th><th>Actions</th>
+        </tr>
+        {% for hotel in hotels %}
+        <tr>
+            <td>{{ hotel.name }}</td>
+            <td>{{ hotel.location }}</td>
+            <td>{{ hotel.number_of_rooms }}</td>
+            <td>
+                <a href="{% url 'hotel_update' hotel.id %}">Edit</a>
+                <a href="{% url 'hotel_delete' hotel.id %}" class="delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

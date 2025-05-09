@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Delete</title>
+    <style>
+        body { font-family: Arial; padding: 20px; text-align: center; }
+        form { display: inline; }
+        button { padding: 10px 20px; margin: 10px; border: none; cursor: pointer; }
+        .yes { background: #f44336; color: white; }
+        .no { background: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Delete "{{ hotel.name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="yes">Yes, Delete</button>
+    </form>
+    <a href="{% url 'hotel_list' %}" class="no">Cancel</a>
+</body>
+</html>
