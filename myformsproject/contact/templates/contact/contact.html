@@ -1,0 +1,9 @@
+<h2>Contact Us</h2>
+<form method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type = "submit">Send</button>
+</form>
+<!-- {{form.as_p }} automatically renders the form fieds in <p> tags-->
+ <!-- {% csrf_token %} protects against cross-Site Forgery attacks -->
+  <!-- Submitting this form sends the data to the same view, where it's processed-->
